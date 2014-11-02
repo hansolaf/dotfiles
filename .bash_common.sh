@@ -43,7 +43,11 @@ HISTSIZE=1000000
 HISTFILESIZE=1000000
 
 #prompt
+#https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 source ~/dotfiles/git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_SHOWUPSTREAM="auto verbose"
 if [ -z "$PS1CHAR" ]; then
     PS1CHAR=☭
 fi
