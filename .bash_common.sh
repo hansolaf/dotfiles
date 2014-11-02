@@ -16,6 +16,8 @@ alias gm='git commit -m'
 alias gu='git pull'
 alias gur='git pull --rebase'
 alias gp='git push'
+alias grh='git reset --hard HEAD'
+alias gro='git reset --hard origin/master'
 
 #other aliases
 alias e='emacs -nw'
