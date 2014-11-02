@@ -30,6 +30,10 @@
 (ido-mode t)
 (setq ido-enable-flex-matching t)
 
+;; Multiple cursors
+(packages-install 'multiple-cursors)
+(require 'multiple-cursors)
+(global-set-key (kbd "M-.") 'mc/mark-next-like-this)
 
 ;; Paredit
 (packages-install 'paredit)
