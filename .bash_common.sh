@@ -19,6 +19,8 @@ alias gp='git push'
 alias gf='git fetch'
 alias grh='git reset --hard HEAD'
 alias gro='git reset --hard origin/master'
+alias gam='git add -A . && git commit -m'
+alias sp='git stash && git pull --rebase && git stash pop'
 
 #other aliases
 alias e='emacs -nw'
