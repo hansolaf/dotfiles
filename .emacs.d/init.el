@@ -1,7 +1,10 @@
 ;; Package-manager
 (require 'package)
-(add-to-list 'package-archives 
-	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(custom-set-variables
+ '(package-archives (quote (("gnu" . "http://elpa.gnu.org/packages/") 
+;			    ("melpa" . "http://melpa.milkbox.net/packages/") 
+			    ("melpa-stable" . "http://stable.melpa.org/packages/")))))
+
 (package-initialize)
 (unless (file-exists-p "~/.emacs.d/elpa/archives/melpa")
   (package-refresh-contents))
@@ -16,6 +19,16 @@
 (setq auto-save-default nil)
 (setq make-backup-files nil)
 
+
+;; (packages-install 'auto-complete)
+;; (require 'auto-complete)
+;; (ac-config-default)
+;; (defun my:ac-c-header-init ()
+;;   (load "auto-complete-c-headers")
+;;   (add-to-list 'ac-sources 'ac-source-c-headers)
+;;   (add-to-list 'achead:include-directories '"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include"))
+;; (add-hook 'c-mode-hook 'my:ac-c-header-init)
+;; (global-set-key  [f1] (lambda () (interactive) (manual-entry (current-word))))
 
 ;; Feature-toggling
 (menu-bar-mode -1)
@@ -62,3 +75,28 @@
 (global-set-key (kbd "C-u") 'undo)
 
 
+;;(packages-install 'cider)
+;;(packages-install 'ac-cider)
+;;(require 'ac-cider)
+;;(add-hook 'cider-mode-hook 'ac-flyspell-workaround)
+;;(add-hook 'cider-mode-hook 'ac-cider-setup)
+;;(add-hook 'cider-repl-mode-hook 'ac-cider-setup)
+;; (eval-after-load "auto-complete"
+;;   '(progn
+;;      (add-to-list 'ac-modes 'cider-mode)
+;;      (add-to-list 'ac-modes 'cider-repl-mode)))
+;; ;; tab to complete
+;; (defun set-auto-complete-as-completion-at-point-function ()
+;;   (setq completion-at-point-functions '(auto-complete)))
+;; (add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
+;; (add-hook 'cider-mode-hook 'set-auto-complete-as-completion-at-point-function)
+
+;; extempore
+(autoload 'extempore-mode "/usr/local/opt/extempore/extras/extempore.el" "" t)
+(add-to-list 'auto-mode-alist '("\\.xtm$" . extempore-mode))
+(setq user-extempore-directory "/usr/local/opt/extempore/")
+
+(add-hook 'haskell-mode-hook 'haskell-indentation-mode)
+
+(autoload 'php-mode "php-mode" "Major mode for editing php code." t)
+(add-to-list 'auto-mode-alist '("\\.php$" . php-mode))

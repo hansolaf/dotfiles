@@ -12,3 +12,5 @@
 	default = simple
 [core]
 	excludesfile = ~/dotfiles/.global-gitignore
+[credential]
+	helper = store
