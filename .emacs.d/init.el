@@ -6,9 +6,9 @@
 			    ("melpa-stable" . "http://stable.melpa.org/packages/")))))
 
 (package-initialize)
-(unless (file-exists-p "~/.emacs.d/elpa/archives/melpa")
+(unless (file-exists-p "~/.emacs.d/elpa/archives/melpa-stable")
   (package-refresh-contents))
-(add-to-list 'load-path user-emacs-directory)
+;(add-to-list 'load-path user-emacs-directory)
 
 (defun packages-install (package)
   (when (not (package-installed-p package))
